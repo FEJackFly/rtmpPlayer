@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>ckplayer</title>
+
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0px;
+			font-family: "Microsoft YaHei", YaHei, "微软雅黑", SimHei, "黑体";
+			font-size: 14px
+		}
+	</style>
+
+</head>
+
+<body>
+	<div id="video" style="width: 400px; height: 400px; float: left;"></div>
+	<div id="hehe" style="width: 400px; height: 400px; float: left; margin-left: 10px"></div>
+	<button onclick="player.changeControlBarShow(false)">显示</button>
+	<button onclick="player.changeControlBarShow(true)">隐藏</button>
+
+	<script type="text/javascript" src="./ckplayer/ckplayer.js"></script>
+	<script type="text/javascript">
+		var videoObject = {
+			container: '#video', //容器的ID或className
+			variable: 'player', //播放函数名称
+			autoplay: true,
+			live: true,
+			flashplayer: false, //强制使用flashplayer
+			video: 'rtmp://172.16.151.154:1935/video/34020000001320000011'
+		};
+		var videoObject1 = {
+			container: '#hehe', //容器的ID或className
+			variable: 'player1', //播放函数名称
+			autoplay: true,
+			live: true,
+			video: 'http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8'
+		};
+		var player = new ckplayer(videoObject);
+		var player1 = new ckplayer(videoObject1);
+	</script>
+</body>
+
+</html>
